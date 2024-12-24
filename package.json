@@ -40,6 +40,11 @@
     "vite": "catalog:",
     "vitest": "catalog:"
   },
+  "pnpm": {
+    "patchedDependencies": {
+      "@unocss/core@0.65.2": "patches/@unocss__core@0.65.2.patch"
+    }
+  },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
   },
@@ -47,10 +52,5 @@
     "*.{js,ts,tsx,vue,md}": [
       "eslint --cache --fix"
     ]
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "@unocss/core@0.65.2": "patches/@unocss__core@0.65.2.patch"
-    }
   }
 }
