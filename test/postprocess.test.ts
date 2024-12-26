@@ -69,8 +69,7 @@ describe('presetUseful postprocess with unColor', () => {
 })
 
 describe('presetUseful postprocess with important', () => {
-  const withOutImport = ['bg-red', 'text-blue']
-  const withInImport = ['!text-xl', 'sm:text-sm!', 'important-ma']
+  const tokens = ['bg-red', 'text-blue', '!text-xl', 'sm:text-sm!', 'important-ma']
 
   it('base', async () => {
     const uno = await generateUno({
@@ -78,7 +77,7 @@ describe('presetUseful postprocess with important', () => {
       preflights: false,
     })
 
-    const { css } = await uno.generate([...withInImport, ...withOutImport])
+    const { css } = await uno.generate(tokens)
 
     expect(css).toMatchInlineSnapshot(`
       "/* layer: default */

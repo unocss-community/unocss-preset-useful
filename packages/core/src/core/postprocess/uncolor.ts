@@ -3,7 +3,6 @@ import type { Postprocessor } from '@unocss/core'
 const rgbRE = /rgb\(([\d\s]+?)\s*\/\s*([^)]+)\)/
 const rgbaRE = /rgba\(([\d\s,]+),\s*([^)]+)\)/
 
-// IN-README-START
 // https://github.com/unocss/unocss/discussions/2816
 // Extract rgba color in css variable.
 export function postprocessWithUnColor(unColor: string): Postprocessor {
@@ -27,13 +26,3 @@ export function postprocessWithUnColor(unColor: string): Postprocessor {
     })
   }
 }
-
-export function importantProcess(): Postprocessor {
-  return (util) => {
-    util.entries.forEach((i) => {
-      if (i[1] != null && !String(i[1]).includes('!important'))
-        i[1] += ' !important'
-    })
-  }
-}
-// IN-README-END
