@@ -1,7 +1,7 @@
 {
   "name": "unocss-preset-useful",
   "type": "module",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "My useful preset about unocss usage.",
   "author": "Chris <https://github.com/zyyv>",
   "license": "MIT",
