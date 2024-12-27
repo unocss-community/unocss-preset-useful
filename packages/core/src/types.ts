@@ -44,13 +44,29 @@ interface PreflightOptions {
   reset?: boolean
 }
 
+export type FilterPattern = Array<string | RegExp> | string | RegExp | null
+
+export interface ImportantOptions {
+  /**
+   * Make all unitilities important.
+   *
+   */
+  includes?: FilterPattern
+
+  /**
+   * Make all unitilities important.
+   *
+   */
+  excludes?: FilterPattern
+}
+
 export interface UsefulOptions {
   /**
    * Make all unitilities important.
    *
    * @default false
    */
-  important?: boolean
+  important?: boolean | ImportantOptions
 
   /**
    * Enable default shortcuts
