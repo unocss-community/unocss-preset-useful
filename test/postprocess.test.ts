@@ -90,4 +90,48 @@ describe('presetUseful postprocess with important', () => {
       }"
     `)
   })
+
+  it('base with excludes', async () => {
+    const uno = await generateUno({
+      preflights: false,
+      important: {
+        excludes: ['color', /bg-/, 'margin'],
+      },
+    })
+
+    const { css } = await uno.generate(tokens)
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      .important-ma{margin:auto;}
+      .bg-red{--un-bg-opacity:1;background-color:rgb(248 113 113 / var(--un-bg-opacity));}
+      .\\!text-xl{font-size:1.25rem !important;line-height:1.75rem !important;}
+      .text-blue{--un-text-opacity:1 !important;color:rgb(96 165 250 / var(--un-text-opacity));}
+      @media (min-width: 640px){
+      .sm\\:text-sm\\!{font-size:0.875rem !important;line-height:1.25rem !important;}
+      }"
+    `)
+  })
+
+  it('base with includes', async () => {
+    const uno = await generateUno({
+      preflights: false,
+      important: {
+        includes: ['color', /bg-/, 'margin'],
+      },
+    })
+
+    const { css } = await uno.generate(tokens)
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      .important-ma{margin:auto !important;}
+      .bg-red{--un-bg-opacity:1 !important;background-color:rgb(248 113 113 / var(--un-bg-opacity)) !important;}
+      .\\!text-xl{font-size:1.25rem;line-height:1.75rem;}
+      .text-blue{--un-text-opacity:1;color:rgb(96 165 250 / var(--un-text-opacity)) !important;}
+      @media (min-width: 640px){
+      .sm\\:text-sm\\!{font-size:0.875rem;line-height:1.25rem;}
+      }"
+    `)
+  })
 })

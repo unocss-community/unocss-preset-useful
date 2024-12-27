@@ -42,13 +42,22 @@ const defaultPresetOptions: Record<string, any> = {
   } as WebFontsOptions,
 }
 
+const defaultImportantOptions = {
+  excludes: [],
+  includes: [/.*/g],
+}
+
 export async function resolveOptions(options: UsefulOptions) {
   const optionsWithDefault = Object.assign({}, defaultOptions, options) as Required<UsefulOptions>
   optionsWithDefault.unColor = typeof optionsWithDefault.unColor === 'string'
     ? optionsWithDefault.unColor
     : optionsWithDefault.unColor ? '--un-color' : false
 
-  optionsWithDefault.important = optionsWithDefault.important === true ? { excludes: [] } : optionsWithDefault.important
+  optionsWithDefault.important = typeof optionsWithDefault.important === 'object'
+    ? Object.assign({}, defaultImportantOptions, optionsWithDefault.important)
+    : optionsWithDefault.important === true
+      ? defaultImportantOptions
+      : false
 
   const presets = await resolvePresets(optionsWithDefault)
   const transformers = await resolveTransformers(optionsWithDefault)
