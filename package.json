@@ -1,9 +1,9 @@
 {
   "name": "@unocss-preset-useful/monorepo",
   "type": "module",
-  "version": "0.9.2",
+  "version": "0.9.1",
   "private": true,
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
     "build": "pnpm -r -F=./packages/* run build",
     "stub": "pnpm -r -F=./packages/* --parallel run stub",
@@ -16,7 +16,10 @@
     "play": "pnpm -C playground run dev",
     "readme": "esno scripts/readme.ts",
     "taze": "taze minor -wIr",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
@@ -38,12 +41,8 @@
     "unocss": "catalog:",
     "unocss-preset-useful": "workspace:*",
     "vite": "catalog:",
+    "vitepress": "catalog:",
     "vitest": "catalog:"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "@unocss/core@0.65.2": "patches/@unocss__core@0.65.2.patch"
-    }
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
