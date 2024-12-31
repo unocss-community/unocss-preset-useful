@@ -161,7 +161,7 @@ export interface UsefulOptions {
    * Only works when `presets` is not specified
    *
    * @about [@unocss/preset-attributify](https://unocss.dev/presets/attributify)
-   * @default false
+   * @default true
    */
   attributify?: boolean | AttributifyOptions
 
@@ -170,7 +170,7 @@ export interface UsefulOptions {
    * Only works when `presets` is not specified
    *
    * @about [@unocss/preset-icons](https://unocss.dev/presets/icons)
-   * @default false
+   * @default true
    */
   icons?: boolean | IconsOptions
 
