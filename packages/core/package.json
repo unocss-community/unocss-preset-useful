@@ -46,7 +46,7 @@
     "stub": "unbuild --stub"
   },
   "peerDependencies": {
-    "unocss": "^0.65.0"
+    "unocss": "^0.65.0 || ^65.4.0"
   },
   "peerDependenciesMeta": {
     "unocss": {
