@@ -46,7 +46,7 @@
     "stub": "unbuild --stub"
   },
   "peerDependencies": {
-    "unocss": "^0.65.0"
+    "unocss": "^0.65.0 || ^65.4.0"
   },
   "peerDependenciesMeta": {
     "unocss": {
@@ -68,7 +68,6 @@
     "@unocss/transformer-variant-group": "catalog:",
     "postcss": "catalog:",
     "postcss-js": "catalog:",
-    "unocss-preset-magicss": "catalog:",
-    "unocss-preset-scrollbar": "catalog:"
+    "unocss-preset-magicss": "catalog:"
   }
 }

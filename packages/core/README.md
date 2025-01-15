@@ -145,16 +145,6 @@ export interface UsefulOptions {
    * @default false
    */
   remToPx?: boolean | RemToPxOptions
-
-  /**
-   * Enable scrollbar preset and the options of it
-   * Only works when `presets` is not specified
-   *
-   * See: https://github.com/action-hong/unocss-preset-scrollbar
-   *
-   * @default false
-   */
-  scrollbar?: boolean | PresetScrollbarDefaultOption
 }
 ```
 

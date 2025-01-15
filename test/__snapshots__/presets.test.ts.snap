@@ -3,11 +3,6 @@
 exports[`preseUseful presets > mutiple preset 2`] = `
 "/* layer: typography */
 .prose{color:var(--un-prose-body);max-width:65ch;}
-/* layer: shortcuts */
-.scrollbar{--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
-.scrollbar::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
-.scrollbar::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);}
-.scrollbar::-webkit-scrollbar-track{background-color:var(--scrollbar-track);}
 /* layer: default */
 .text-center{text-align:center;}"
 `;

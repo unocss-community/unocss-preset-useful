@@ -8,7 +8,6 @@ describe('preseUseful presets', () => {
       presets: [
         presetUseful({
           typography: true,
-          scrollbar: true,
         }),
       ],
     })
@@ -23,13 +22,12 @@ describe('preseUseful presets', () => {
         "@unocss/preset-icons",
         "unocss-preset-useful",
         "@unocss/preset-uno",
-        "unocss-preset-scrollbar",
         "@unocss/preset-attributify",
         "@unocss/preset-typography",
       ]
     `)
 
-    const { css } = await uno.generate('text-center prose scrollbar', { preflights: false })
+    const { css } = await uno.generate('text-center prose', { preflights: false })
     expect(css).toMatchSnapshot()
   })
 })

@@ -27,7 +27,6 @@ const defaultOptions: UsefulOptions = {
   typography: false,
   tagify: false,
   remToPx: false,
-  scrollbar: false,
   magicss: false,
 
   // transformers
@@ -104,7 +103,6 @@ async function resolvePresets(options: Required<UsefulOptions>) {
     typography: import('@unocss/preset-typography').then(m => m.presetTypography),
     tagify: import('@unocss/preset-tagify').then(m => m.presetTagify),
     remToPx: import('@unocss/preset-rem-to-px').then(m => m.default),
-    scrollbar: import('unocss-preset-scrollbar').then(m => m.presetScrollbar),
     magicss: import('unocss-preset-magicss').then(m => m.presetMagicss),
   }
 
