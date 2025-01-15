@@ -221,15 +221,6 @@ export interface UsefulOptions {
   remToPx?: boolean | RemToPxOptions
 
   /**
-   * Enable scrollbar preset and the options of it
-   * Only works when `presets` is not specified
-   *
-   * @about [unocss-preset-scrollbar](https://github.com/action-hong/unocss-preset-scrollbar)
-   * @default false
-   */
-  scrollbar?: boolean | PresetScrollbarDefaultOption
-
-  /**
    * Enable magicss preset
    *
    * @about [unocss-preset-magicss](https://github.com/unpreset/unocss-preset-magicss)

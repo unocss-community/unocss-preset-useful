@@ -29,7 +29,9 @@ describe('magic in PresetUseful Theme', () => {
       '100%': { opacity: 0, transform: 'scale(1, 1) translateY(-900%)' },
     }
 
-    expect(`{${await cssObj2StrAsync(style)}}`).toMatchInlineSnapshot(`
+    const css = await cssObj2StrAsync(style)
+
+    expect(`{${css}}`).toMatchInlineSnapshot(`
       "{0%, 20%, 40%, 50% {
           opacity: 1;
           transform: scale(1, 1) translateY(0)

@@ -10,7 +10,6 @@ import type { WebFontsOptions } from '@unocss/preset-web-fonts'
 import type { CompileClassOptions } from '@unocss/transformer-compile-class'
 import type { TransformerDirectivesOptions } from '@unocss/transformer-directives'
 import type { TransformerVariantGroupOptions } from '@unocss/transformer-variant-group'
-import type { PresetScrollbarDefaultOption } from 'unocss-preset-scrollbar'
 
 type CustomStaticShortcut = [string | string[], StaticShortcut[1]] | [string | string[], StaticShortcut[1], StaticShortcut[2]]
 export type CustomStaticShortcuts = CustomStaticShortcut[]
@@ -161,7 +160,7 @@ export interface UsefulOptions {
    * Only works when `presets` is not specified
    *
    * @about [@unocss/preset-attributify](https://unocss.dev/presets/attributify)
-   * @default true
+   * @default false
    */
   attributify?: boolean | AttributifyOptions
 
@@ -170,7 +169,7 @@ export interface UsefulOptions {
    * Only works when `presets` is not specified
    *
    * @about [@unocss/preset-icons](https://unocss.dev/presets/icons)
-   * @default true
+   * @default false
    */
   icons?: boolean | IconsOptions
 
@@ -211,15 +210,6 @@ export interface UsefulOptions {
    * @default false
    */
   remToPx?: boolean | RemToPxOptions
-
-  /**
-   * Enable scrollbar preset and the options of it
-   * Only works when `presets` is not specified
-   *
-   * @about [unocss-preset-scrollbar](https://github.com/action-hong/unocss-preset-scrollbar)
-   * @default false
-   */
-  scrollbar?: boolean | PresetScrollbarDefaultOption
 
   /**
    * Enable magicss preset

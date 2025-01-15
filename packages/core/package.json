@@ -68,7 +68,6 @@
     "@unocss/transformer-variant-group": "catalog:",
     "postcss": "catalog:",
     "postcss-js": "catalog:",
-    "unocss-preset-magicss": "catalog:",
-    "unocss-preset-scrollbar": "catalog:"
+    "unocss-preset-magicss": "catalog:"
   }
 }

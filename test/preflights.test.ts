@@ -22,6 +22,6 @@ describe('presetUseful preflights', () => {
 
   it('output reset css', async () => {
     const css = resetPreflight.getCSS({} as any) as string
-    expect(css).toMatchFileSnapshot('./fixtures/reset.css')
+    await expect(css).toMatchFileSnapshot('./fixtures/reset.css')
   })
 })
