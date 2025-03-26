@@ -8,6 +8,6 @@ export function postprocess(options: ResolvedOptions): Postprocessor[] {
 
   return [
     unColor ? postprocessWithUnColor(unColor as string) : undefined,
-    important ? importantProcess(important as ImportantOptions) : undefined,
+    important ? importantProcess(important as Required<ImportantOptions>) : undefined,
   ].filter(Boolean) as Postprocessor[]
 }
