@@ -2,6 +2,12 @@
 
 Integrate and useful preset.
 
+> [!WARNING]
+> - `^0.x.x`: Only support presetWind3 preset.
+> - `^1.x.x`: Only support presetWind4 preset.
+>
+> Please use the correct version according to the UnoCSS version.
+
 ## Features
 - 🔥 All-in-One popular presets.
 - 🚀 Collection of features not integrated into UnoCSS.

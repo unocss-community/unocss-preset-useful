@@ -3,11 +3,11 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - wind3
 
   pull_request:
     branches:
-      - main
+      - wind3
 
 jobs:
   lint:
