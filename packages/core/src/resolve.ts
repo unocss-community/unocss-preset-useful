@@ -1,28 +1,31 @@
 import type { Theme } from '@unocss/preset-mini'
 import type { WebFontsOptions } from '@unocss/preset-web-fonts'
-import type { CustomStaticShortcuts, ResolvedOptions, UsefulOptions, UsefulTheme } from './types'
+import type { CustomStaticShortcuts, ImportantOptions, PostprocessOptions, ResolvedOptions, UsefulOptions, UsefulTheme } from './types'
 import { nomarlizeTheme } from './core'
 import { cssObj2StrSync, deepMerge, resolveAnimation } from './utils'
 
 const defaultOptions: UsefulOptions = {
   theme: {},
-  important: false,
-  enableDefaultShortcuts: true,
-  /**
-   * @deprecated Use `magicss` option instead
-   */
-  enableMagicAnimations: false,
-  /**
-   * @deprecated Use `preflights.reset` instead
-   */
-  enableResetStyles: true,
+
+  postprocess: {
+    important: false,
+  },
+
+  shortcuts: {
+    default: true,
+  },
+
   preflights: {
     reset: true,
   },
-  // presets
-  uno: { preflight: 'on-demand' },
+
+  // default by enabling all presets, wind3 and wind4 互斥, only one can be enabled
+  wind4: true, // After v0.10.0, wind4 is the default preset
+  wind3: false,
   attributify: true,
   icons: true,
+
+  // optional presets
   webFonts: false,
   typography: false,
   tagify: false,
@@ -41,22 +44,41 @@ const defaultPresetOptions: Record<string, any> = {
   } as WebFontsOptions,
 }
 
-const defaultImportantOptions = {
-  excludes: [],
-  includes: [/.*/g],
+const defaultPostprocessOptions: Required<PostprocessOptions> = {
+  important: {
+    excludes: [],
+    includes: [/.*/g],
+  },
+  unColor: '--un-color',
 }
 
 export async function resolveOptions(options: UsefulOptions) {
   const optionsWithDefault = Object.assign({}, defaultOptions, options) as Required<UsefulOptions>
-  optionsWithDefault.unColor = typeof optionsWithDefault.unColor === 'string'
-    ? optionsWithDefault.unColor
-    : optionsWithDefault.unColor ? '--un-color' : false
 
-  optionsWithDefault.important = typeof optionsWithDefault.important === 'object'
-    ? Object.assign({}, defaultImportantOptions, optionsWithDefault.important)
-    : optionsWithDefault.important === true
-      ? defaultImportantOptions
-      : false
+  if (optionsWithDefault.wind4 && optionsWithDefault.wind3) {
+    console.warn('wind3 and wind4 are mutually exclusive, only one can be enabled')
+    optionsWithDefault.wind3 = false
+  }
+
+  // Reolve postprocess options
+  if (optionsWithDefault.postprocess === true) {
+    optionsWithDefault.postprocess = defaultPostprocessOptions
+  }
+  else if (typeof optionsWithDefault.postprocess === 'object') {
+    if (typeof optionsWithDefault.postprocess.important === 'object') {
+      optionsWithDefault.postprocess.important = {
+        ...defaultPostprocessOptions.important as ImportantOptions,
+        ...optionsWithDefault.postprocess.important,
+      }
+    }
+    else if (optionsWithDefault.postprocess.important === true) {
+      optionsWithDefault.postprocess.important = defaultPostprocessOptions.important
+    }
+
+    if (optionsWithDefault.postprocess.unColor === true) {
+      optionsWithDefault.postprocess.unColor = defaultPostprocessOptions.unColor
+    }
+  }
 
   const presets = await resolvePresets(optionsWithDefault)
   const transformers = await resolveTransformers(optionsWithDefault)
@@ -96,7 +118,8 @@ function resolveExtend(extend: UsefulTheme['extend']) {
 async function resolvePresets(options: Required<UsefulOptions>) {
   const presets = []
   const presetMap = {
-    uno: import('@unocss/preset-uno').then(m => m.presetUno),
+    wind3: import('@unocss/preset-wind3').then(m => m.presetWind3),
+    wind4: import('@unocss/preset-wind4').then(m => m.presetWind4),
     attributify: import('@unocss/preset-attributify').then(m => m.presetAttributify),
     icons: import('@unocss/preset-icons').then(m => m.presetIcons),
     webFonts: import('@unocss/preset-web-fonts').then(m => m.presetWebFonts),
