@@ -12,6 +12,6 @@ export function preflights(options: ResolvedOptions): Preflight[] {
   }
 
   return [
-    options.enableResetStyles || options.preflights.reset ? resetPreflight : undefined,
+    options.preflights.reset ? resetPreflight : undefined,
   ].filter(Boolean) as Preflight[]
 }
