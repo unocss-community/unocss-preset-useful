@@ -1,12 +1,14 @@
 import type { CSSObject, Preset, SourceCodeTransformer, StaticShortcut } from '@unocss/core'
+// Presets
 import type { AttributifyOptions } from '@unocss/preset-attributify'
 import type { IconsOptions } from '@unocss/preset-icons'
-import type { Theme } from '@unocss/preset-mini'
 import type { RemToPxOptions } from '@unocss/preset-rem-to-px'
 import type { TagifyOptions } from '@unocss/preset-tagify'
 import type { TypographyOptions } from '@unocss/preset-typography'
-import type { PresetUnoOptions } from '@unocss/preset-uno'
 import type { WebFontsOptions } from '@unocss/preset-web-fonts'
+import type { PresetWind3Options, Theme as ThemeWind3 } from '@unocss/preset-wind3'
+import type { PresetWind4Options, Theme as ThemeWind4 } from '@unocss/preset-wind4'
+// Transformers
 import type { CompileClassOptions } from '@unocss/transformer-compile-class'
 import type { TransformerDirectivesOptions } from '@unocss/transformer-directives'
 import type { TransformerVariantGroupOptions } from '@unocss/transformer-variant-group'
@@ -30,17 +32,35 @@ export interface UsefulExtends extends Exclude<UsefulTheme, 'extend'> {
   animation?: Objectiable<string>
 }
 
-export interface UsefulTheme extends Theme {
+export interface UsefulTheme extends Omit<ThemeWind3, 'container' | 'containers'>, ThemeWind4 {
   extend?: UsefulExtends
 }
 
-interface PreflightOptions {
+export interface PreflightOptions {
   /**
    * Enable reset styles
    *
-   * @default true
+   * @default false
    */
   reset?: boolean
+}
+
+export interface PostprocessOptions {
+  /**
+   * Make all unitilities important.
+   *
+   * @default false
+   */
+  important?: boolean | ImportantOptions
+
+  /**
+   * Extract rgba color in css variable, default key name is `--un-color`
+   *
+   * Only works when `wind3` is enabled
+   *
+   * @default false
+   */
+  unColor?: boolean | string
 }
 
 export type FilterPattern = Array<string | RegExp> | string | RegExp | null
@@ -61,35 +81,11 @@ export interface ImportantOptions {
 
 export interface UsefulOptions {
   /**
-   * Make all unitilities important.
+   * Enable built-in postprocess
    *
    * @default false
    */
-  important?: boolean | ImportantOptions
-
-  /**
-   * Enable default shortcuts
-   *
-   * @default true
-   */
-  enableDefaultShortcuts?: boolean
-
-  /**
-   * Enable magic animations
-   *
-   * @default false
-   * @deprecated Use `magicss` option instead
-   */
-  enableMagicAnimations?: boolean
-
-  /**
-   * Enable reset styles
-   *
-   * @default true
-   *
-   * @deprecated Use `preflights.reset` instead
-   */
-  enableResetStyles?: boolean
+  postprocess?: boolean | PostprocessOptions
 
   /**
    * Enable preflights
@@ -98,12 +94,14 @@ export interface UsefulOptions {
    */
   preflights?: boolean | PreflightOptions
 
-  /**
-   * Extract rgba color in css variable
-   *
-   * @default false
-   */
-  unColor?: boolean | string
+  shortcuts?: boolean | {
+    /**
+     * Enable default shortcuts
+     *
+     * @default true
+     */
+    default?: boolean
+  }
 
   /**
    * Improve theme to be more useful, and align with Tailwind theme configuration
@@ -147,13 +145,24 @@ export interface UsefulOptions {
   theme?: UsefulTheme
 
   /**
-   * Enable the default preset
+   * Enable the default preset for preset-wind3
    * Only works when `presets` is not specified
    *
-   * @about [@unocss/preset-uno](https://unocss.dev/presets/uno)
+   * @about [@unocss/preset-wind3](https://unocss.dev/presets/wind3)
+   * @default false
+   */
+  wind3?: boolean | PresetWind3Options
+
+  /**
+   * Enable the default preset for preset-wind4
+   * Only works when `presets` is not specified
+   *
+   * After v1.0.0, wind4 is the default preset
+   *
+   * @about [@unocss/preset-wind4](https://unocss.dev/presets/wind4)
    * @default true
    */
-  uno?: boolean | PresetUnoOptions
+  wind4?: boolean | PresetWind4Options
 
   /**
    * Enable attributify mode and the options of it

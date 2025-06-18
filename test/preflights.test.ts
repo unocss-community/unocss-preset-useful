@@ -2,7 +2,6 @@ import type { UsefulOptions } from 'unocss-preset-useful'
 import { createGenerator } from 'unocss'
 import { presetUseful } from 'unocss-preset-useful'
 import { describe, expect, it } from 'vitest'
-import { resetPreflight } from '../packages/core/src/core/preflights/reset'
 
 async function generateUno(options: UsefulOptions = {}) {
   return await createGenerator({
@@ -17,11 +16,12 @@ describe('presetUseful preflights', () => {
     const uno = await generateUno()
     const preflights = uno.config.preflights
 
-    expect(preflights.map(p => p.layer)).toEqual(['useful', 'preflights'])
-  })
-
-  it('output reset css', async () => {
-    const css = resetPreflight.getCSS({} as any) as string
-    await expect(css).toMatchFileSnapshot('./fixtures/reset.css')
+    expect(preflights.map(p => p.layer)).toMatchInlineSnapshot(`
+      [
+        "base",
+        "theme",
+        "properties",
+      ]
+    `)
   })
 })

@@ -29,3 +29,5 @@ logs
 # Vitepress
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+
+packages/core/src/core/preflights/reset.ts

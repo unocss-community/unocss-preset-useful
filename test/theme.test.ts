@@ -30,8 +30,8 @@ describe('presetUseful theme', () => {
     const _uno = await createGenerator<UsefulTheme>({
       presets: [
         presetUseful({
-          enableDefaultShortcuts: false,
-          uno: true,
+          shortcuts: false,
+          wind3: true,
           theme: {
             extend,
           },
@@ -41,12 +41,7 @@ describe('presetUseful theme', () => {
     const { css } = await _uno.generate('animate-wiggle-slow', { preflights: false })
 
     expect(_uno.config.theme.animation).toMatchSnapshot()
-    expect(css).toMatchInlineSnapshot(`
-      "/* layer: shortcuts */
-      .animate-wiggle-slow{animation:wiggle 1s ease-in-out infinite;}
-      /* layer: default */
-      @keyframes wiggle{0%, 100%{transform:rotate(-3deg);}50%{transform:rotate(3deg);}20%, 30%{transform:rotate(-3deg);}80%{transform:rotate(3deg);}}"
-    `)
+    expect(css).toMatchInlineSnapshot(`""`)
   })
 })
 

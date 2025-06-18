@@ -23,12 +23,11 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.js"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -42,11 +41,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "stub": "unbuild --stub"
+    "build": "tsdown",
+    "dev": "tsdown --watch"
   },
   "peerDependencies": {
-    "unocss": "^0.65.0 || ^65.4.0"
+    "unocss": "^0.65.0 || >=65.4.0"
   },
   "peerDependenciesMeta": {
     "unocss": {
@@ -55,17 +54,6 @@
   },
   "dependencies": {
     "@unocss/core": "catalog:",
-    "@unocss/preset-attributify": "catalog:",
-    "@unocss/preset-icons": "catalog:",
-    "@unocss/preset-mini": "catalog:",
-    "@unocss/preset-rem-to-px": "catalog:",
-    "@unocss/preset-tagify": "catalog:",
-    "@unocss/preset-typography": "catalog:",
-    "@unocss/preset-uno": "catalog:",
-    "@unocss/preset-web-fonts": "catalog:",
-    "@unocss/transformer-compile-class": "catalog:",
-    "@unocss/transformer-directives": "catalog:",
-    "@unocss/transformer-variant-group": "catalog:",
     "postcss": "catalog:",
     "postcss-js": "catalog:",
     "unocss-preset-magicss": "catalog:"

@@ -1,19 +1,12 @@
 import type { Rule, RuleMeta } from '@unocss/core'
-import { parseColor } from '@unocss/preset-mini/utils'
 import { layerMeta } from '../meta'
 
 // IN-README-START
 // Use any css variable easily.
 export const rules: Rule[] = [
-  [/^([^:]+)::(\S|[^:]+)$/, ([, n, v], { theme }) => {
-    const color = parseColor(v, theme)
-    if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
-      return {
-        [`--${n}`]: `${color.cssColor.components.join(',')}`,
-      }
-    }
+  [/^([^:]+)::(\S|[^:]+)$/, ([, k, v]) => {
     return {
-      [`--${n}`]: v,
+      [`--${k}`]: v,
     }
   }],
 ]

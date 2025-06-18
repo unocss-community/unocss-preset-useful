@@ -19,8 +19,8 @@ const _shortcuts: CustomStaticShortcuts = [
   [['pcc', 'pc', 'p-c', 'p-c-c'], 'pxc pyc'],
 
   // flex layout
-  [['f-c', 'fcc'], 'flex justify-center items-center'],
-  [['f-c-c', 'fccc'], 'f-c flex-col'],
+  [['fcc', 'f-c'], 'flex justify-center items-center'],
+  [['fccc', 'f-c-c'], 'f-c flex-col'],
   [['fc', 'fxc', 'f-x-c'], 'flex justify-center'],
   [['fi', 'fyc', 'f-y-c'], 'flex items-center'],
   [['fs', 'fxs'], 'flex justify-start'],
