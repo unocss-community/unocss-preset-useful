@@ -40,7 +40,7 @@ export interface PreflightOptions {
   /**
    * Enable reset styles
    *
-   * @default true
+   * @default false
    */
   reset?: boolean
 }
