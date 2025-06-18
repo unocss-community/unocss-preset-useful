@@ -15,7 +15,7 @@ const defaultOptions: UsefulOptions = {
   },
 
   preflights: {
-    reset: true,
+    reset: false,
   },
 
   // default by enabling all presets, wind3 and wind4 互斥, only one can be enabled

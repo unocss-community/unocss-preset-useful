@@ -19,7 +19,6 @@ exports[`preset-useful > targets 1`] = `
 .\\@active\\:bg-red.active{background-color:color-mix(in oklab, var(--colors-red-DEFAULT) var(--un-bg-opacity), transparent);}
 }
 /* layer: useful */
-__reset_placeholder__
 .c-context\\:\\:\\#818181{--c-context:#818181;}
 .c-custom\\:\\:red{--c-custom:red;}
 .c\\:\\:red{--c:red;}
