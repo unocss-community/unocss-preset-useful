@@ -17,7 +17,7 @@ async function update() {
 
     await writeFile(
       resetFilePath,
-      originalContent.replace('__reset_placeholder__', css),
+      originalContent.replace('__reset_placeholder__', css.replace(/`/g, '\\`')),
       'utf-8',
     )
 

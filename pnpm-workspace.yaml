@@ -17,22 +17,25 @@ catalog:
   '@unocss/preset-rem-to-px': ^66.2.3
   '@unocss/preset-tagify': ^66.2.3
   '@unocss/preset-typography': ^66.2.3
+  '@unocss/preset-web-fonts': ^66.2.3
   '@unocss/preset-wind3': ^66.2.3
   '@unocss/preset-wind4': ^66.2.3
-  '@unocss/preset-web-fonts': ^66.2.3
   '@unocss/transformer-compile-class': ^66.2.3
   '@unocss/transformer-directives': ^66.2.3
   '@unocss/transformer-variant-group': ^66.2.3
   '@vitejs/plugin-vue': ^5.2.4
   bumpp: ^10.2.0
   eslint: ^9.29.0
+  eslint-import-resolver-node: ^0.3.9
   esno: ^4.8.0
+  execa: ^9.6.0
   fs-extra: ^11.3.0
   lint-staged: ^16.1.2
   postcss: ^8.5.6
   postcss-js: ^4.0.1
   simple-git-hooks: ^2.13.0
   taze: ^19.1.0
+  tsdown: ^0.12.8
   typescript: ^5.8.3
   unbuild: ^3.5.0
   unocss: ^66.2.3
@@ -42,6 +45,3 @@ catalog:
   vitest: ^3.2.4
   vue: ^3.5.16
   vue-tsc: ^2.2.10
-  eslint-import-resolver-node: ^0.3.9
-  execa: ^9.6.0
-  tsdown: ^0.12.8
