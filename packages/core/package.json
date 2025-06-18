@@ -23,12 +23,11 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.js"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -46,7 +45,7 @@
     "dev": "tsdown --watch"
   },
   "peerDependencies": {
-    "unocss": "^0.65.0 || ^65.4.0"
+    "unocss": "^0.65.0 || >=65.4.0"
   },
   "peerDependenciesMeta": {
     "unocss": {

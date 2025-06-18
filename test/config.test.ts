@@ -5,13 +5,15 @@ import { describe, expect, it } from 'vitest'
 describe('config tests', () => {
   it('targets', async () => {
     const unoA = await createGenerator(defineUsefulConfig())
-    expect(unoA.config.presets.map(p => p.name)).toEqual(
+    expect(unoA.config.presets.map(p => p.name)).toMatchInlineSnapshot(
+      `
       [
-        '@unocss/preset-icons',
-        'unocss-preset-useful',
-        '@unocss/preset-uno',
-        '@unocss/preset-attributify',
-      ],
+        "@unocss/preset-icons",
+        "unocss-preset-useful",
+        "@unocss/preset-wind4",
+        "@unocss/preset-attributify",
+      ]
+    `,
     )
 
     const unoB = await createGenerator(defineUsefulConfig({

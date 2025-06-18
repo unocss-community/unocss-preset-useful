@@ -21,7 +21,7 @@ describe('preseUseful presets', () => {
       [
         "@unocss/preset-icons",
         "unocss-preset-useful",
-        "@unocss/preset-uno",
+        "@unocss/preset-wind4",
         "@unocss/preset-attributify",
         "@unocss/preset-typography",
       ]

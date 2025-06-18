@@ -17,7 +17,14 @@ describe('presetUseful preflights', () => {
     const uno = await generateUno()
     const preflights = uno.config.preflights
 
-    expect(preflights.map(p => p.layer)).toEqual(['useful', 'preflights'])
+    expect(preflights.map(p => p.layer)).toMatchInlineSnapshot(`
+      [
+        "useful",
+        "base",
+        "theme",
+        "properties",
+      ]
+    `)
   })
 
   it('output reset css', async () => {
