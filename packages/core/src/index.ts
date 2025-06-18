@@ -1,9 +1,8 @@
-import type { Shortcut, UserConfig } from '@unocss/core'
+import type { UserConfig } from 'unocss'
 import type { UsefulOptions, UsefulTheme } from './types'
 import { definePreset, mergeConfigs } from '@unocss/core'
-import { extractors, postprocess, preflights, rules, shortcuts, variants } from './core'
+import { shortcuts as builtInShortcuts, extractors, postprocess, preflights, rules, variants } from './core'
 import { PRESET_NAME } from './meta'
-
 import { resolveOptions } from './resolve'
 
 export * from './utils'
@@ -12,7 +11,10 @@ export type { UsefulOptions, UsefulTheme }
 
 export const presetUseful = definePreset<UsefulOptions, UsefulTheme>(async (options) => {
   const resolvedOptions = await resolveOptions(options ?? {})
-  const { enableDefaultShortcuts, theme, meta } = resolvedOptions
+  const { theme, meta, shortcuts: userShortcuts } = resolvedOptions
+  const shortcuts = (userShortcuts === true || (typeof userShortcuts === 'object' && userShortcuts.default !== false))
+    ? builtInShortcuts
+    : []
 
   return {
     name: `unocss-preset-${PRESET_NAME}`,
@@ -22,7 +24,7 @@ export const presetUseful = definePreset<UsefulOptions, UsefulTheme>(async (opti
     rules,
     theme,
     variants: variants(resolvedOptions),
-    shortcuts: [...(enableDefaultShortcuts ? shortcuts : []), ...meta.shortcuts] as Shortcut[],
+    shortcuts,
     extractors,
     postprocess: postprocess(resolvedOptions),
     presets: meta.presets,

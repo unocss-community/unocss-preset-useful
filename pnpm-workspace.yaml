@@ -10,7 +10,6 @@ catalog:
   '@types/postcss-js': ^4.0.4
   '@unocss/core': ^66.2.1
   '@unocss/eslint-plugin': ^66.2.1
-  '@unocss/nuxt': ^66.2.1
   '@unocss/preset-attributify': ^66.2.1
   '@unocss/preset-icons': ^66.2.1
   '@unocss/preset-legacy-compat': ^66.2.1
@@ -18,7 +17,8 @@ catalog:
   '@unocss/preset-rem-to-px': ^66.2.1
   '@unocss/preset-tagify': ^66.2.1
   '@unocss/preset-typography': ^66.2.1
-  '@unocss/preset-uno': ^66.2.1
+  '@unocss/preset-wind3': ^66.2.1
+  '@unocss/preset-wind4': ^66.2.1
   '@unocss/preset-web-fonts': ^66.2.1
   '@unocss/transformer-compile-class': ^66.2.1
   '@unocss/transformer-directives': ^66.2.1

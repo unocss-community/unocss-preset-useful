@@ -1,4 +1,3 @@
-import type { Theme } from '@unocss/preset-mini'
 import type { WebFontsOptions } from '@unocss/preset-web-fonts'
 import type { CustomStaticShortcuts, ImportantOptions, PostprocessOptions, ResolvedOptions, UsefulOptions, UsefulTheme } from './types'
 import { nomarlizeTheme } from './core'
@@ -20,7 +19,7 @@ const defaultOptions: UsefulOptions = {
   },
 
   // default by enabling all presets, wind3 and wind4 互斥, only one can be enabled
-  wind4: true, // After v0.10.0, wind4 is the default preset
+  wind4: true, // After v1.0.0, wind4 is the default preset
   wind3: false,
   attributify: true,
   icons: true,
@@ -110,7 +109,7 @@ function resolveExtend(extend: UsefulTheme['extend']) {
     resolvedAnimation.keyframes[key] = `{${cssObj2StrSync(keyframes[key])}}`
 
   return {
-    theme: { animation: resolvedAnimation } as Theme,
+    theme: { animation: resolvedAnimation } as UsefulTheme,
     shortcuts: _shortcuts,
   }
 }
@@ -118,14 +117,14 @@ function resolveExtend(extend: UsefulTheme['extend']) {
 async function resolvePresets(options: Required<UsefulOptions>) {
   const presets = []
   const presetMap = {
-    wind3: import('@unocss/preset-wind3').then(m => m.presetWind3),
-    wind4: import('@unocss/preset-wind4').then(m => m.presetWind4),
-    attributify: import('@unocss/preset-attributify').then(m => m.presetAttributify),
-    icons: import('@unocss/preset-icons').then(m => m.presetIcons),
-    webFonts: import('@unocss/preset-web-fonts').then(m => m.presetWebFonts),
-    typography: import('@unocss/preset-typography').then(m => m.presetTypography),
-    tagify: import('@unocss/preset-tagify').then(m => m.presetTagify),
-    remToPx: import('@unocss/preset-rem-to-px').then(m => m.default),
+    wind3: import('unocss').then(m => m.presetWind3),
+    wind4: import('unocss').then(m => m.presetWind4),
+    attributify: import('unocss').then(m => m.presetAttributify),
+    icons: import('unocss').then(m => m.presetIcons),
+    webFonts: import('unocss').then(m => m.presetWebFonts),
+    typography: import('unocss').then(m => m.presetTypography),
+    tagify: import('unocss').then(m => m.presetTagify),
+    remToPx: import('@unocss/preset-rem-to-px').then(m => m.presetRemToPx),
     magicss: import('unocss-preset-magicss').then(m => m.presetMagicss),
   }
 

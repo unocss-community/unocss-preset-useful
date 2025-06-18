@@ -159,10 +159,10 @@ export interface UsefulOptions {
    * Enable the default preset
    * Only works when `presets` is not specified
    *
-   * @about [@unocss/preset-uno](https://unocss.dev/presets/uno)
+   * @about [@unocss/preset-wind3](https://unocss.dev/presets/wind3)
    * @default true
    */
-  uno?: boolean | PresetUnoOptions
+  wind3?: boolean | PresetUnoOptions
 
   /**
    * Enable attributify mode and the options of it

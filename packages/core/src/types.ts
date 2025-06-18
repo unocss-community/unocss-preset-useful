@@ -1,15 +1,14 @@
 import type { CSSObject, Preset, SourceCodeTransformer, StaticShortcut } from '@unocss/core'
-
+// Presets
 import type { AttributifyOptions } from '@unocss/preset-attributify'
 import type { IconsOptions } from '@unocss/preset-icons'
-import type { Theme as ThemeMini } from '@unocss/preset-mini'
 import type { RemToPxOptions } from '@unocss/preset-rem-to-px'
 import type { TagifyOptions } from '@unocss/preset-tagify'
 import type { TypographyOptions } from '@unocss/preset-typography'
 import type { WebFontsOptions } from '@unocss/preset-web-fonts'
-import type { PresetWind3Options } from '@unocss/preset-wind3'
+import type { PresetWind3Options, Theme as ThemeWind3 } from '@unocss/preset-wind3'
 import type { PresetWind4Options, Theme as ThemeWind4 } from '@unocss/preset-wind4'
-
+// Transformers
 import type { CompileClassOptions } from '@unocss/transformer-compile-class'
 import type { TransformerDirectivesOptions } from '@unocss/transformer-directives'
 import type { TransformerVariantGroupOptions } from '@unocss/transformer-variant-group'
@@ -33,7 +32,7 @@ export interface UsefulExtends extends Exclude<UsefulTheme, 'extend'> {
   animation?: Objectiable<string>
 }
 
-export interface UsefulTheme extends Omit<ThemeMini, 'container' | 'containers'>, ThemeWind4 {
+export interface UsefulTheme extends Omit<ThemeWind3, 'container' | 'containers'>, ThemeWind4 {
   extend?: UsefulExtends
 }
 
@@ -56,6 +55,8 @@ export interface PostprocessOptions {
 
   /**
    * Extract rgba color in css variable, default key name is `--un-color`
+   *
+   * Only works when `wind3` is enabled
    *
    * @default false
    */
@@ -147,7 +148,7 @@ export interface UsefulOptions {
    * Enable the default preset for preset-wind3
    * Only works when `presets` is not specified
    *
-   * @about [@unocss/preset-uno](https://unocss.dev/presets/uno)
+   * @about [@unocss/preset-wind3](https://unocss.dev/presets/wind3)
    * @default false
    */
   wind3?: boolean | PresetWind3Options
@@ -156,7 +157,9 @@ export interface UsefulOptions {
    * Enable the default preset for preset-wind4
    * Only works when `presets` is not specified
    *
-   * @about [@unocss/preset-uno](https://unocss.dev/presets/uno)
+   * After v1.0.0, wind4 is the default preset
+   *
+   * @about [@unocss/preset-wind4](https://unocss.dev/presets/wind4)
    * @default true
    */
   wind4?: boolean | PresetWind4Options
