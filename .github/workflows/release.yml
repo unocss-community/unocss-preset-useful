@@ -28,6 +28,10 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - run: pnpm dlx changelogithub
+        env:
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+
       - name: Config npm
         run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
         env:
@@ -35,7 +39,3 @@ jobs:
 
       - name: Publish to npm
         run: pnpm -r publish --access public --no-git-checks
-
-      - run: npx changelogithub
-        env:
-          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
