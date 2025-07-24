@@ -34,6 +34,9 @@ jobs:
         env:
           CYPRESS_INSTALL_BINARY: 0
 
+      - name: Build
+        run: pnpm build
+
       - run: pnpm lint --fix
 
       - uses: autofix-ci/action@v1
