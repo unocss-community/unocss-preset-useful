@@ -10,5 +10,5 @@ export default antfu({
     'regexp/no-lazy-ends': 'off',
     'regexp/no-useless-lazy': 'off',
   },
-  ignores: ['docs/guide/postprocess.md', 'docs/guide/theme.md'],
+  ignores: ['docs/guide/postprocess.md', 'docs/guide/theme.md', '.github/**'],
 })
