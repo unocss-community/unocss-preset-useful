@@ -40,3 +40,9 @@ jobs:
       - run: pnpm lint --fix
 
       - uses: autofix-ci/action@v1
+        with:
+          # 在 main 分支上创建 PR，在 PR 中直接提交
+          create_pr: ${{ github.event_name == 'push' }}
+          commit_message: "style: fix lint issues"
+          pr_title: "🔧 Auto-fix lint issues"
+          pr_body: "This PR automatically fixes linting issues found by ESLint."
