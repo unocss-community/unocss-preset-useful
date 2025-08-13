@@ -14,10 +14,6 @@ const defaultOptions: UsefulOptions = {
     default: true,
   },
 
-  preflights: {
-    reset: false,
-  },
-
   // default by enabling all presets, wind3 and wind4 互斥, only one can be enabled
   wind4: true, // After v1.0.0, wind4 is the default preset
   wind3: false,
@@ -77,6 +73,9 @@ export async function resolveOptions(options: UsefulOptions) {
     if (optionsWithDefault.postprocess.unColor === true) {
       optionsWithDefault.postprocess.unColor = defaultPostprocessOptions.unColor
     }
+  }
+  else {
+    optionsWithDefault.postprocess = {}
   }
 
   const presets = await resolvePresets(optionsWithDefault)

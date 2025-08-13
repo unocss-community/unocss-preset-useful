@@ -13,6 +13,7 @@ export const usefulTargets: string[] = [
   'p-10::10px',
   'text-[rgb(--c)]:50',
   'c-context::#818181',
+  'no-scrollbar',
 
   // variants
   'hover:pr',

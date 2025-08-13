@@ -36,15 +36,6 @@ export interface UsefulTheme extends Omit<ThemeWind3, 'container' | 'containers'
   extend?: UsefulExtends
 }
 
-export interface PreflightOptions {
-  /**
-   * Enable reset styles
-   *
-   * @default false
-   */
-  reset?: boolean
-}
-
 export interface PostprocessOptions {
   /**
    * Make all unitilities important.
@@ -86,13 +77,6 @@ export interface UsefulOptions {
    * @default false
    */
   postprocess?: boolean | PostprocessOptions
-
-  /**
-   * Enable preflights
-   *
-   * @default true
-   */
-  preflights?: boolean | PreflightOptions
 
   shortcuts?: boolean | {
     /**

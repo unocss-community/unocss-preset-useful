@@ -1,4 +1,5 @@
 import type { Rule, RuleMeta } from '@unocss/core'
+import { symbols } from '@unocss/core'
 import { layerMeta } from '../meta'
 
 // IN-README-START
@@ -9,6 +10,19 @@ export const rules: Rule[] = [
       [`--${k}`]: v,
     }
   }],
+  [
+    'no-scrollbar',
+    [
+      {
+        'scrollbar-width': 'none',
+        '-ms-overflow-style': 'none',
+      },
+      {
+        [symbols.selector]: s => `${s}::-webkit-scrollbar`,
+        display: 'none',
+      },
+    ],
+  ],
 ]
 // IN-README-END
 

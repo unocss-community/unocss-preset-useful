@@ -1,9 +1,9 @@
 import type { Postprocessor } from '@unocss/core'
-import type { ImportantOptions, ResolvedOptions } from '../../types'
+import type { ImportantOptions, PostprocessOptions } from '../../types'
 import { importantProcess } from './important'
 import { postprocessWithUnColor } from './uncolor'
 
-export function postprocess(options: ResolvedOptions): Postprocessor[] {
+export function postprocess(options: PostprocessOptions): Postprocessor[] {
   const { unColor, important } = options
 
   return [
