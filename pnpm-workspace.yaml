@@ -3,46 +3,46 @@ packages:
   - packages/**
 
 catalog:
-  '@antfu/eslint-config': ^4.19.0
-  '@babel/types': ^7.28.1
+  '@antfu/eslint-config': ^5.2.1
+  '@babel/types': ^7.28.2
   '@types/fs-extra': ^11.0.4
-  '@types/node': ^24.1.0
+  '@types/node': ^24.2.1
   '@types/postcss-js': ^4.0.4
-  '@unocss/core': ^66.3.3
-  '@unocss/eslint-plugin': ^66.3.3
-  '@unocss/preset-attributify': ^66.3.3
-  '@unocss/preset-icons': ^66.3.3
-  '@unocss/preset-legacy-compat': ^66.3.3
-  '@unocss/preset-mini': ^66.3.3
-  '@unocss/preset-rem-to-px': ^66.3.3
-  '@unocss/preset-tagify': ^66.3.3
-  '@unocss/preset-typography': ^66.3.3
-  '@unocss/preset-web-fonts': ^66.3.3
-  '@unocss/preset-wind3': ^66.3.3
-  '@unocss/preset-wind4': ^66.3.3
-  '@unocss/transformer-compile-class': ^66.3.3
-  '@unocss/transformer-directives': ^66.3.3
-  '@unocss/transformer-variant-group': ^66.3.3
-  '@vitejs/plugin-vue': ^6.0.0
-  bumpp: ^10.2.0
-  eslint: ^9.31.0
+  '@unocss/core': ^66.4.2
+  '@unocss/eslint-plugin': ^66.4.2
+  '@unocss/preset-attributify': ^66.4.2
+  '@unocss/preset-icons': ^66.4.2
+  '@unocss/preset-legacy-compat': ^66.4.2
+  '@unocss/preset-mini': ^66.4.2
+  '@unocss/preset-rem-to-px': ^66.4.2
+  '@unocss/preset-tagify': ^66.4.2
+  '@unocss/preset-typography': ^66.4.2
+  '@unocss/preset-web-fonts': ^66.4.2
+  '@unocss/preset-wind3': ^66.4.2
+  '@unocss/preset-wind4': ^66.4.2
+  '@unocss/transformer-compile-class': ^66.4.2
+  '@unocss/transformer-directives': ^66.4.2
+  '@unocss/transformer-variant-group': ^66.4.2
+  '@vitejs/plugin-vue': ^6.0.1
+  bumpp: ^10.2.3
+  eslint: ^9.33.0
   eslint-import-resolver-node: ^0.3.9
   esno: ^4.8.0
   execa: ^9.6.0
-  fs-extra: ^11.3.0
-  lint-staged: ^16.1.2
+  fs-extra: ^11.3.1
+  lint-staged: ^16.1.5
   postcss: ^8.5.6
   postcss-js: ^4.0.1
-  simple-git-hooks: ^2.13.0
+  simple-git-hooks: ^2.13.1
   taze: ^19.1.0
-  tsdown: ^0.13.0
-  vue-tsc: ^3.0.3
-  typescript: ^5.8.3
+  tsdown: ^0.14.1
+  vue-tsc: ^3.0.5
+  typescript: ^5.9.2
   unbuild: ^3.6.0
-  unocss: ^66.3.3
+  unocss: ^66.4.2
   unocss-preset-magicss: ^1.0.1
-  vite: ^7.0.6
-  vitepress: ^1.6.3
+  vite: ^7.1.2
+  vitepress: ^1.6.4
   vitest: ^3.2.4
   vue: ^3.5.18
 
