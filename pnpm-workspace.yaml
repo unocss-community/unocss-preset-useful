@@ -36,7 +36,6 @@ catalog:
   simple-git-hooks: ^2.13.1
   taze: ^19.1.0
   tsdown: ^0.14.1
-  vue-tsc: ^3.0.5
   typescript: ^5.9.2
   unbuild: ^3.6.0
   unocss: ^66.4.2
@@ -45,6 +44,7 @@ catalog:
   vitepress: ^1.6.4
   vitest: ^3.2.4
   vue: ^3.5.18
+  vue-tsc: ^3.0.5
 
 onlyBuiltDependencies:
   - esbuild
