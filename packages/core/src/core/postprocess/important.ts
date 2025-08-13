@@ -17,17 +17,16 @@ function createFilter(
 
 export function importantProcess(importantOptions: Required<ImportantOptions>): Postprocessor {
   const keyFilter = createFilter(importantOptions.includes, importantOptions.excludes)
+  function nonKeysValidate(key: string): boolean {
+    const invalidKeys = ['syntax', 'initial-value', 'inherits']
+    return !key.startsWith('$$') && !invalidKeys.includes(key)
+  }
 
   return (util) => {
     for (const item of util.entries) {
-      if (keyFilter(item[0])) {
+      if (keyFilter(item[0]) && nonKeysValidate(item[0])) {
         if (item[1] != null && !String(item[1]).includes('!important')) {
           item[1] += ' !important'
-        }
-      }
-      else {
-        if (item[1] != null && String(item[1]).includes('!important')) {
-          item[1] = String(item[1]).replace(/\s*!important/g, '')
         }
       }
     }

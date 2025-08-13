@@ -42,7 +42,7 @@
   ],
   "scripts": {
     "build": "tsdown",
-    "dev": "tsdown --watch"
+    "stub": "tsdown --watch"
   },
   "peerDependencies": {
     "unocss": "^0.65.0 || >=65.4.0"

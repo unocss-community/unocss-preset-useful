@@ -5,7 +5,7 @@
   "private": true,
   "packageManager": "pnpm@10.14.0",
   "scripts": {
-    "build": "pnpm reset && pnpm -r -F=./packages/* run build",
+    "build": "pnpm -r -F=./packages/* run build",
     "stub": "pnpm -r -F=./packages/* --parallel run stub",
     "dev": "pnpm stub",
     "release": "pnpm lint:fix && bumpp -r",
@@ -18,8 +18,7 @@
     "typecheck": "tsc --noEmit",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "reset": "esno scripts/reset.ts"
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
