@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.1.1",
   "private": true,
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.18.2",
   "scripts": {
     "build": "pnpm -r -F=./packages/* run build",
     "stub": "pnpm -r -F=./packages/* --parallel run stub",

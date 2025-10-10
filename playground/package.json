@@ -13,8 +13,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "catalog:",
-    "typescript": "^5.9.2",
-    "unocss": "^66.4.2",
+    "typescript": "^5.9.3",
+    "unocss": "^66.5.2",
     "unocss-preset-useful": "workspace:*",
     "vite": "catalog:",
     "vue-tsc": "catalog:"
