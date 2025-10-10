@@ -46,7 +46,7 @@ export function defineUsefulConfig<T extends object = UsefulTheme>(options: Usef
       presets: [
         presetUseful(options) as any,
       ],
-    }),
+    }) as any,
     config,
   ])
 }
