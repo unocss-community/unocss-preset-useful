@@ -2,49 +2,75 @@ packages:
   - playground
   - packages/**
 
-catalog:
-  '@antfu/eslint-config': ^6.0.0
-  '@babel/types': ^7.28.4
-  '@types/fs-extra': ^11.0.4
-  '@types/node': ^24.9.1
-  '@types/postcss-js': ^4.0.4
-  '@unocss/core': ^66.5.4
-  '@unocss/eslint-plugin': ^66.5.4
-  '@unocss/preset-attributify': ^66.5.4
-  '@unocss/preset-icons': ^66.5.4
-  '@unocss/preset-legacy-compat': ^66.5.4
-  '@unocss/preset-mini': ^66.5.4
-  '@unocss/preset-rem-to-px': ^66.5.4
-  '@unocss/preset-tagify': ^66.5.4
-  '@unocss/preset-typography': ^66.5.4
-  '@unocss/preset-web-fonts': ^66.5.4
-  '@unocss/preset-wind3': ^66.5.4
-  '@unocss/preset-wind4': ^66.5.4
-  '@unocss/transformer-compile-class': ^66.5.4
-  '@unocss/transformer-directives': ^66.5.4
-  '@unocss/transformer-variant-group': ^66.5.4
-  '@vitejs/plugin-vue': ^6.0.1
-  bumpp: ^10.3.1
-  eslint: ^9.38.0
-  eslint-import-resolver-node: ^0.3.9
-  esno: ^4.8.0
-  execa: ^9.6.0
-  fs-extra: ^11.3.2
-  lint-staged: ^16.2.5
-  postcss: ^8.5.6
-  postcss-js: ^5.0.1
-  simple-git-hooks: ^2.13.1
-  taze: ^19.8.1
-  tsdown: ^0.15.9
-  typescript: ^5.9.3
-  unbuild: ^3.6.1
-  unocss: ^66.5.4
-  unocss-preset-magicss: ^1.0.1
-  vite: ^7.1.11
-  vitepress: ^1.6.4
-  vitest: ^3.2.4
-  vue: ^3.5.22
-  vue-tsc: ^3.1.1
+catalogs:
+  # UnoCSS Core & Presets
+  unocss:
+    '@unocss/core': ^66.5.4
+    '@unocss/eslint-plugin': ^66.5.4
+    '@unocss/preset-attributify': ^66.5.4
+    '@unocss/preset-icons': ^66.5.4
+    '@unocss/preset-legacy-compat': ^66.5.4
+    '@unocss/preset-mini': ^66.5.4
+    '@unocss/preset-rem-to-px': ^66.5.4
+    '@unocss/preset-tagify': ^66.5.4
+    '@unocss/preset-typography': ^66.5.4
+    '@unocss/preset-web-fonts': ^66.5.4
+    '@unocss/preset-wind3': ^66.5.4
+    '@unocss/preset-wind4': ^66.5.4
+    '@unocss/transformer-compile-class': ^66.5.4
+    '@unocss/transformer-directives': ^66.5.4
+    '@unocss/transformer-variant-group': ^66.5.4
+    unocss: ^66.5.4
+    unocss-preset-magicss: ^1.0.1
+
+  # Vue & Vite
+  vue:
+    '@vitejs/plugin-vue': ^6.0.1
+    vite: ^7.1.11
+    vue: ^3.5.22
+    vue-tsc: ^3.1.1
+
+  # Build & Dev Tools
+  build:
+    tsdown: ^0.15.9
+    typescript: ^5.9.3
+    unbuild: ^3.6.1
+
+  # Linting & Formatting
+  lint:
+    '@antfu/eslint-config': ^6.0.0
+    eslint: ^9.38.0
+    eslint-import-resolver-node: ^0.3.9
+    lint-staged: ^16.2.5
+
+  # Testing
+  test:
+    vitest: ^3.2.4
+
+  # Documentation
+  docs:
+    vitepress: ^1.6.4
+
+  # Git Hooks & Release
+  git:
+    bumpp: ^10.3.1
+    simple-git-hooks: ^2.13.1
+
+  # Utilities
+  utils:
+    '@babel/types': ^7.28.4
+    esno: ^4.8.0
+    execa: ^9.6.0
+    fs-extra: ^11.3.2
+    postcss: ^8.5.6
+    postcss-js: ^5.0.1
+    taze: ^19.8.1
+
+  # Type Definitions
+  types:
+    '@types/fs-extra': ^11.0.4
+    '@types/node': ^24.9.1
+    '@types/postcss-js': ^4.0.4
 
 onlyBuiltDependencies:
   - esbuild

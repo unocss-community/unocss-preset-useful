@@ -9,14 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "catalog:"
+    "vue": "catalog:vue"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "catalog:",
-    "typescript": "^5.9.3",
-    "unocss": "^66.5.4",
+    "@vitejs/plugin-vue": "catalog:vue",
+    "typescript": "catalog:build",
+    "unocss": "catalog:unocss",
     "unocss-preset-useful": "workspace:*",
-    "vite": "catalog:",
-    "vue-tsc": "catalog:"
+    "vite": "catalog:vue",
+    "vue-tsc": "catalog:vue"
   }
 }

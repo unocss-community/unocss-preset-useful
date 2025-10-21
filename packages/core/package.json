@@ -53,9 +53,9 @@
     }
   },
   "dependencies": {
-    "@unocss/core": "catalog:",
-    "postcss": "catalog:",
-    "postcss-js": "catalog:",
-    "unocss-preset-magicss": "catalog:"
+    "@unocss/core": "catalog:unocss",
+    "postcss": "catalog:utils",
+    "postcss-js": "catalog:utils",
+    "unocss-preset-magicss": "catalog:unocss"
   }
 }
