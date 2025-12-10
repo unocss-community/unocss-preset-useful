@@ -1,11 +1,12 @@
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
     testTimeout: 30_000,
     name: 'unit',
-    projects: [
-      'vitest.config.ts',
-    ],
+    alias: {
+      'unocss-preset-useful': fileURLToPath(new URL('./packages/core/src/index.ts', import.meta.url)),
+    },
   },
 })
