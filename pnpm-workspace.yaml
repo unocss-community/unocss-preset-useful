@@ -1,8 +1,44 @@
+catalogMode: prefer
+shellEmulator: true
+trustPolicy: no-downgrade
+
 packages:
   - playground
   - packages/**
 
 catalogs:
+  # Build & Dev Tools
+  build:
+    tsdown: ^0.17.2
+    typescript: ^5.9.3
+    unbuild: ^3.6.1
+
+  # Documentation
+  docs:
+    vitepress: ^1.6.4
+
+  # Git Hooks & Release
+  git:
+    bumpp: ^10.3.2
+    simple-git-hooks: ^2.13.1
+
+  # Linting & Formatting
+  lint:
+    '@antfu/eslint-config': ^6.6.1
+    eslint: ^9.39.1
+    eslint-import-resolver-node: ^0.3.9
+    lint-staged: ^16.2.7
+
+  # Testing
+  test:
+    vitest: ^4.0.15
+
+  # Type Definitions
+  types:
+    '@types/fs-extra': ^11.0.4
+    '@types/node': ^24.10.2
+    '@types/postcss-js': ^4.1.0
+
   # UnoCSS Core & Presets
   unocss:
     '@unocss/core': ^66.5.10
@@ -23,39 +59,6 @@ catalogs:
     unocss: ^66.5.10
     unocss-preset-magicss: ^1.0.1
 
-  # Vue & Vite
-  vue:
-    '@vitejs/plugin-vue': ^6.0.2
-    vite: ^7.2.7
-    vue: ^3.5.25
-    vue-tsc: ^3.1.8
-
-  # Build & Dev Tools
-  build:
-    tsdown: ^0.17.2
-    typescript: ^5.9.3
-    unbuild: ^3.6.1
-
-  # Linting & Formatting
-  lint:
-    '@antfu/eslint-config': ^6.6.1
-    eslint: ^9.39.1
-    eslint-import-resolver-node: ^0.3.9
-    lint-staged: ^16.2.7
-
-  # Testing
-  test:
-    vitest: ^4.0.15
-
-  # Documentation
-  docs:
-    vitepress: ^1.6.4
-
-  # Git Hooks & Release
-  git:
-    bumpp: ^10.3.2
-    simple-git-hooks: ^2.13.1
-
   # Utilities
   utils:
     '@babel/types': ^7.28.5
@@ -66,11 +69,12 @@ catalogs:
     postcss-js: ^5.0.2
     taze: ^19.9.2
 
-  # Type Definitions
-  types:
-    '@types/fs-extra': ^11.0.4
-    '@types/node': ^24.10.2
-    '@types/postcss-js': ^4.1.0
+  # Vue & Vite
+  vue:
+    '@vitejs/plugin-vue': ^6.0.2
+    vite: ^7.2.7
+    vue: ^3.5.25
+    vue-tsc: ^3.1.8
 
 onlyBuiltDependencies:
   - esbuild
