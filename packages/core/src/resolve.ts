@@ -8,6 +8,7 @@ const defaultOptions: UsefulOptions = {
 
   postprocess: {
     important: false,
+    unColor: false,
   },
 
   shortcuts: {

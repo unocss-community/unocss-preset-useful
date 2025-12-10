@@ -50,3 +50,5 @@ export function defineUsefulConfig<T extends object = UsefulTheme>(options: Usef
     config,
   ])
 }
+
+export const zyyv = defineUsefulConfig
