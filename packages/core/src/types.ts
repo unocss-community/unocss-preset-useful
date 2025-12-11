@@ -209,7 +209,7 @@ export interface ZyyvOptions {
   /**
    * Enable magicss preset
    *
-   * @about [unocss-preset-magicss](https://github.com/unpreset/unocss-preset-magicss)
+   * @about [unocss-preset-magicss](https://github.com/unocss-community/unocss-preset-magicss)
    * @default false
    */
   magicss?: boolean

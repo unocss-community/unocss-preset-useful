@@ -19,7 +19,7 @@ These are some of the most common and useful UnoCSS presets that I have summariz
 | [presetWebFonts](https://unocss.dev/presets/web-fonts) | Use web fonts from Google Fonts, FontShare by simply providing the font names. | ❌ | ✅ |
 | [presetTagify](https://unocss.dev/presets/tagify) | This enables the tagify mode for other presets. | ❌ | ✅ |
 | [presetRemToPx](https://unocss.dev/presets/rem-to-px) | Converts rem to px for all utilities. | ❌ | ✅ |
-| [presetMagicss](https://github.com/unpreset/unocss-preset-magicss) | Integrate magic animation into unocss preset. | ❌ | ❌ |
+| [presetMagicss](https://github.com/unocss-community/unocss-preset-magicss) | Integrate magic animation into unocss preset. | ❌ | ❌ |
 
 ## Built-In Transformers
 

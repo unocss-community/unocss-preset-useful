@@ -12,7 +12,7 @@ Integrate and useful preset.
   - 🎨 Support extract rgba color in css variable.
   - 💜 Support expand theme animation name usage.
   - 🍬 etc.
-- 📦 Build-In [Magic Animate](https://github.com/unpreset/unocss-preset-magicss).
+- 📦 Build-In [Magic Animate](https://github.com/unocss-community/unocss-preset-magicss).
 - 🌬️ Align with TW theme configuration.
 
 ## Usage

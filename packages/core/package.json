@@ -5,17 +5,17 @@
   "description": "My useful preset about unocss usage.",
   "author": "Chris <https://github.com/zyyv>",
   "license": "MIT",
-  "homepage": "https://github.com/unpreset/unocss-preset-zyyv#readme",
+  "homepage": "https://github.com/unocss-community/unocss-preset-zyyv#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unpreset/unocss-preset-zyyv.git"
+    "url": "git+https://github.com/unocss-community/unocss-preset-zyyv.git"
   },
   "bugs": {
-    "url": "https://github.com/unpreset/unocss-preset-zyyv/issues"
+    "url": "https://github.com/unocss-community/unocss-preset-zyyv/issues"
   },
   "keywords": [
     "unocss",
-    "unpreset",
+    "unocss-community",
     "unocss-preset",
     "unocss-preset-zyyv"
   ],
