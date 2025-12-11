@@ -1,5 +1,5 @@
 {
-  "name": "@unocss-preset-useful/monorepo",
+  "name": "@unocss-preset-zyyv/monorepo",
   "type": "module",
   "version": "1.1.2-beta.2",
   "private": true,
@@ -53,7 +53,7 @@
     "typescript": "catalog:build",
     "unbuild": "catalog:build",
     "unocss": "catalog:unocss",
-    "unocss-preset-useful": "workspace:*",
+    "unocss-preset-zyyv": "workspace:*",
     "vite": "catalog:vue",
     "vitepress": "catalog:docs",
     "vitest": "catalog:test"

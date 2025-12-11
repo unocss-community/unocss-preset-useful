@@ -1,11 +1,11 @@
 import { defineConfig } from 'unocss'
-import { presetUseful } from 'unocss-preset-useful'
+import { presetZyyv } from 'unocss-preset-zyyv'
 
 // Just for Vscode Extension
 
 export default defineConfig({
   presets: [
-    presetUseful({
+    presetZyyv({
       typography: true,
       magicss: true,
     }),

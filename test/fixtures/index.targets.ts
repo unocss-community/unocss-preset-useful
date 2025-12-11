@@ -1,4 +1,4 @@
-export const usefulTargets: string[] = [
+export const zyyvTargets: string[] = [
   'pr',
   'pa',
   'f-c',

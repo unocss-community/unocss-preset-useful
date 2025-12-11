@@ -1,10 +1,10 @@
-import type { UsefulExtends, UsefulTheme } from '../packages/core/src/types'
+import type { ZyyvExtends, ZyyvTheme } from '../packages/core/src/types'
 import { createGenerator } from 'unocss'
-import { animationRegExp, presetUseful } from 'unocss-preset-useful'
+import { animationRegExp, presetZyyv } from 'unocss-preset-zyyv'
 import { describe, expect, it } from 'vitest'
 
-describe('presetUseful theme', () => {
-  const extend: UsefulExtends = {
+describe('presetZyyv theme', () => {
+  const extend: ZyyvExtends = {
     animation: {
       'spin': 'spin 1s linear infinite',
       'bounce': 'bounce 2s ease-in-out 3',
@@ -27,9 +27,9 @@ describe('presetUseful theme', () => {
   }
 
   it('theme extend configuration', async () => {
-    const _uno = await createGenerator<UsefulTheme>({
+    const _uno = await createGenerator<ZyyvTheme>({
       presets: [
-        presetUseful({
+        presetZyyv({
           shortcuts: false,
           wind3: true,
           theme: {

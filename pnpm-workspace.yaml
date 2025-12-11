@@ -1,7 +1,6 @@
 catalogMode: prefer
 shellEmulator: true
 trustPolicy: no-downgrade
-
 packages:
   - playground
   - packages/**
@@ -36,7 +35,7 @@ catalogs:
   # Type Definitions
   types:
     '@types/fs-extra': ^11.0.4
-    '@types/node': ^24.10.2
+    '@types/node': ^24.10.3
     '@types/postcss-js': ^4.1.0
 
   # UnoCSS Core & Presets

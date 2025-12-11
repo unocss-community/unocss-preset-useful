@@ -72,7 +72,7 @@ export default defineUsefulConfig({
 })
 ```
 
-See [test cases](https://github.com/unocss-community/unocss-preset-useful/blob/09d8aa57b66ea96dd23aedf5f7dfebf1b9a21206/test/postprocess.test.ts#L71-L137) for more examples.
+See [test cases](https://github.com/unocss-community/unocss-preset-zyyv/blob/09d8aa57b66ea96dd23aedf5f7dfebf1b9a21206/test/postprocess.test.ts#L71-L137) for more examples.
 
 ### Types
 ```ts

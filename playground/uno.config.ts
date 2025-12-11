@@ -1,6 +1,6 @@
-import { defineUsefulConfig } from 'unocss-preset-useful'
+import { defineZyyvConfig } from 'unocss-preset-zyyv'
 
-export default defineUsefulConfig({
+export default defineZyyvConfig({
   typography: true,
   magicss: true,
   webFonts: {

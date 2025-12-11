@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`presetUseful theme > theme extend configuration 1`] = `
+exports[`presetZyyv theme > theme extend configuration 1`] = `
 {
   "category": {
     "back-in-down": "Back Entrances",

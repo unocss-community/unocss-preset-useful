@@ -6,7 +6,7 @@ export default defineConfig({
     testTimeout: 30_000,
     name: 'unit',
     alias: {
-      'unocss-preset-useful': fileURLToPath(new URL('./packages/core/src/index.ts', import.meta.url)),
+      'unocss-preset-zyyv': fileURLToPath(new URL('./packages/core/src/index.ts', import.meta.url)),
     },
   },
 })

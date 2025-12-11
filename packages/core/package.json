@@ -1,23 +1,23 @@
 {
-  "name": "unocss-preset-useful",
+  "name": "unocss-preset-zyyv",
   "type": "module",
   "version": "1.1.2-beta.2",
   "description": "My useful preset about unocss usage.",
   "author": "Chris <https://github.com/zyyv>",
   "license": "MIT",
-  "homepage": "https://github.com/unpreset/unocss-preset-useful#readme",
+  "homepage": "https://github.com/unpreset/unocss-preset-zyyv#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unpreset/unocss-preset-useful.git"
+    "url": "git+https://github.com/unpreset/unocss-preset-zyyv.git"
   },
   "bugs": {
-    "url": "https://github.com/unpreset/unocss-preset-useful/issues"
+    "url": "https://github.com/unpreset/unocss-preset-zyyv/issues"
   },
   "keywords": [
     "unocss",
     "unpreset",
     "unocss-preset",
-    "unocss-preset-useful"
+    "unocss-preset-zyyv"
   ],
   "sideEffects": false,
   "exports": {

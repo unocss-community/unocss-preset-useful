@@ -20,7 +20,7 @@ export type Objectiable<T> = Record<string, T>
 
 export type CSSKeyframesRule = Objectiable<CSSObject>
 
-export interface UsefulExtends extends Exclude<UsefulTheme, 'extend'> {
+export interface ZyyvExtends extends Exclude<ZyyvTheme, 'extend'> {
   keyframes?: Record<string, CSSKeyframesRule>
   /**
    * Different from the original, you can use the following formats:
@@ -32,9 +32,11 @@ export interface UsefulExtends extends Exclude<UsefulTheme, 'extend'> {
   animation?: Objectiable<string>
 }
 
-export interface UsefulTheme extends Omit<ThemeWind3, 'container' | 'containers'>, ThemeWind4 {
-  extend?: UsefulExtends
+export interface ZyyvTheme extends Omit<ThemeWind3, 'container' | 'containers'>, ThemeWind4 {
+  extend?: ZyyvExtends
 }
+
+export interface UsefulTheme extends ZyyvTheme {}
 
 export interface PostprocessOptions {
   /**
@@ -70,7 +72,7 @@ export interface ImportantOptions {
   excludes?: FilterPattern
 }
 
-export interface UsefulOptions {
+export interface ZyyvOptions {
   /**
    * Enable built-in postprocess
    *
@@ -126,7 +128,7 @@ export interface UsefulOptions {
    * ```
    *
    */
-  theme?: UsefulTheme
+  theme?: ZyyvTheme
 
   /**
    * Enable the default preset for preset-wind3
@@ -237,7 +239,9 @@ export interface UsefulOptions {
   compileClass?: boolean | CompileClassOptions
 }
 
-export type ResolvedOptions = Required<UsefulOptions> & {
+export interface UsefulOptions extends ZyyvOptions {}
+
+export type ResolvedOptions = Required<ZyyvOptions> & {
   meta: {
     presets: Preset[]
     shortcuts: CustomStaticShortcuts

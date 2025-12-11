@@ -1,9 +1,9 @@
 import type { WebFontsOptions } from '@unocss/preset-web-fonts'
-import type { CustomStaticShortcuts, ImportantOptions, PostprocessOptions, ResolvedOptions, UsefulOptions, UsefulTheme } from './types'
+import type { CustomStaticShortcuts, ImportantOptions, PostprocessOptions, ResolvedOptions, ZyyvOptions, ZyyvTheme } from './types'
 import { nomarlizeTheme } from './core'
 import { cssObj2StrSync, deepMerge, resolveAnimation } from './utils'
 
-const defaultOptions: UsefulOptions = {
+const defaultOptions: ZyyvOptions = {
   theme: {},
 
   postprocess: {
@@ -48,8 +48,8 @@ const defaultPostprocessOptions: Required<PostprocessOptions> = {
   unColor: '--un-color',
 }
 
-export async function resolveOptions(options: UsefulOptions) {
-  const optionsWithDefault = Object.assign({}, defaultOptions, options) as Required<UsefulOptions>
+export async function resolveOptions(options: ZyyvOptions) {
+  const optionsWithDefault = Object.assign({}, defaultOptions, options) as Required<ZyyvOptions>
 
   if (optionsWithDefault.wind4 && optionsWithDefault.wind3) {
     console.warn('wind3 and wind4 are mutually exclusive, only one can be enabled')
@@ -95,7 +95,7 @@ export async function resolveOptions(options: UsefulOptions) {
   } as ResolvedOptions
 }
 
-function resolveExtend(extend: UsefulTheme['extend']) {
+function resolveExtend(extend: ZyyvTheme['extend']) {
   const _shortcuts: CustomStaticShortcuts = []
   const { animation, keyframes } = extend!
 
@@ -109,12 +109,12 @@ function resolveExtend(extend: UsefulTheme['extend']) {
     resolvedAnimation.keyframes[key] = `{${cssObj2StrSync(keyframes[key])}}`
 
   return {
-    theme: { animation: resolvedAnimation } as UsefulTheme,
+    theme: { animation: resolvedAnimation } as ZyyvTheme,
     shortcuts: _shortcuts,
   }
 }
 
-async function resolvePresets(options: Required<UsefulOptions>) {
+async function resolvePresets(options: Required<ZyyvOptions>) {
   const presets = []
   const presetMap = {
     wind3: import('unocss').then(m => m.presetWind3),
@@ -143,7 +143,7 @@ async function resolvePresets(options: Required<UsefulOptions>) {
   return presets
 }
 
-async function resolveTransformers(options: Required<UsefulOptions>) {
+async function resolveTransformers(options: Required<ZyyvOptions>) {
   const transformers = []
   const transformerMap = {
     directives: import('unocss').then(m => m.transformerDirectives),

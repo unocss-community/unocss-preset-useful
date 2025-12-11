@@ -9,6 +9,7 @@ export default antfu({
     'regexp/strict': 'off',
     'regexp/no-lazy-ends': 'off',
     'regexp/no-useless-lazy': 'off',
+    'ts/ban-ts-comment': 'off',
   },
   ignores: ['docs/guide/postprocess.md', 'docs/guide/theme.md', '.github/**'],
 })

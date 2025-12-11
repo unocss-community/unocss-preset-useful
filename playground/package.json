@@ -15,7 +15,7 @@
     "@vitejs/plugin-vue": "catalog:vue",
     "typescript": "catalog:build",
     "unocss": "catalog:unocss",
-    "unocss-preset-useful": "workspace:*",
+    "unocss-preset-zyyv": "workspace:*",
     "vite": "catalog:vue",
     "vue-tsc": "catalog:vue"
   }

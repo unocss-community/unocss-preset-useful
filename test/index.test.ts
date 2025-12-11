@@ -1,21 +1,21 @@
 import { createGenerator, escapeSelector } from 'unocss'
-import { presetUseful } from 'unocss-preset-useful'
+import { presetZyyv } from 'unocss-preset-zyyv'
 import { describe, expect, it } from 'vitest'
-import { usefulTargets } from './fixtures/index.targets'
+import { zyyvTargets } from './fixtures/index.targets'
 
-describe('preset-useful', async () => {
+describe('preset-zyyv', async () => {
   const uno = await createGenerator({
     presets: [
-      presetUseful(),
+      presetZyyv(),
     ],
   })
   it('targets', async () => {
-    const code = usefulTargets.join(' ')
+    const code = zyyvTargets.join(' ')
     const { css } = await uno.generate(code)
     const { css: css2 } = await uno.generate(code)
 
     const unmatched: string[] = []
-    for (const i of usefulTargets) {
+    for (const i of zyyvTargets) {
       if (!css.includes(escapeSelector(i)))
         unmatched.push(i)
     }

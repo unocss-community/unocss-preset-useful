@@ -1,5 +1,5 @@
 import type { UserConfig } from 'unocss'
-import type { PostprocessOptions, UsefulOptions, UsefulTheme } from './types'
+import type { PostprocessOptions, ZyyvOptions, ZyyvTheme } from './types'
 import { definePreset, mergeConfigs } from '@unocss/core'
 import { shortcuts as builtInShortcuts, extractors, postprocess, preflights, rules, variants } from './core'
 import { PRESET_NAME } from './meta'
@@ -7,9 +7,9 @@ import { resolveOptions } from './resolve'
 
 export * from './utils'
 
-export type { UsefulOptions, UsefulTheme }
+export type { ZyyvOptions, ZyyvTheme }
 
-export const presetUseful = definePreset<UsefulOptions, UsefulTheme>(async (options) => {
+export const presetZyyv = definePreset<ZyyvOptions, ZyyvTheme>(async (options) => {
   const resolvedOptions = await resolveOptions(options ?? {})
   const { theme, meta, shortcuts: userShortcuts } = resolvedOptions
   const shortcuts = (userShortcuts === true || (typeof userShortcuts === 'object' && userShortcuts.default !== false))
@@ -34,21 +34,23 @@ export const presetUseful = definePreset<UsefulOptions, UsefulTheme>(async (opti
   }
 })
 
-export default presetUseful
+export const presetUseful = presetZyyv
 
-export function defineConfig<T extends object = UsefulTheme>(config: UserConfig<T>) {
+export default presetZyyv
+
+export function defineConfig<T extends object = ZyyvTheme>(config: UserConfig<T>) {
   return config
 }
 
-export function defineUsefulConfig<T extends object = UsefulTheme>(options: UsefulOptions = {}, config: UserConfig<T> = {}) {
+export function defineZyyvConfig<T extends object = ZyyvTheme>(options: ZyyvOptions = {}, config: UserConfig<T> = {}) {
   return mergeConfigs([
     defineConfig<T>({
       presets: [
-        presetUseful(options) as any,
+        presetZyyv(options) as any,
       ],
     }) as any,
     config,
   ])
 }
 
-export const zyyv = defineUsefulConfig
+export const defineUsefulConfig = defineZyyvConfig

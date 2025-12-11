@@ -1,6 +1,9 @@
-# unocss-preset-useful [![npm](https://img.shields.io/npm/v/unocss-preset-useful)](https://npmjs.com/package/unocss-preset-useful)
+# unocss-preset-zyyv [![npm](https://img.shields.io/npm/v/unocss-preset-zyyv)](https://npmjs.com/package/unocss-preset-zyyv)
 
 Integrate and useful preset.
+
+> [!WARNING]
+> The package name has been changed to `unocss-preset-zyyv`.
 
 ## Features
 - 🔥 All-in-One popular presets.
@@ -14,17 +17,17 @@ Integrate and useful preset.
 
 ## Usage
 ```shell
-pnpm i -D unocss-preset-useful unocss
+pnpm i -D unocss-preset-zyyv unocss
 ```
 
 ```ts
 // unocss.config.ts
 import { defineConfig } from 'unocss'
-import { presetUseful } from 'unocss-preset-useful'
+import { presetZyyv } from 'unocss-preset-zyyv'
 
 export default defineConfig({
   presets: [
-    presetUseful(),
+    presetZyyv(),
   ],
 })
 ```
@@ -33,7 +36,7 @@ export default defineConfig({
 <summary>Options</summary><br>
 
 ```ts
-export interface UsefulOptions {
+export interface ZyyvOptions {
   /**
    * Enable default shortcuts
    *
@@ -95,7 +98,7 @@ export interface UsefulOptions {
    * ```
    *
    */
-  theme?: UsefulTheme
+  theme?: ZyyvTheme
 
   /**
    * Enable the default preset
@@ -162,7 +165,7 @@ export interface UsefulOptions {
 // Support extract base64 image.
 export const extractors: Extractor[] = [
   {
-    name: 'unocss-preset-useful-extractor-includes-base64',
+    name: 'unocss-preset-zyyv-extractor-includes-base64',
     order: 0,
     extract({ code }) {
       return [...new Set(code.split(/[\\:]?[\s'"`{}]|;(?!base64)+/g))]

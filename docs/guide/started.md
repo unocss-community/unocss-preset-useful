@@ -3,15 +3,17 @@
 ## Installation
 
 ```bash
-pnpm add -D unocss unocss-preset-useful
+pnpm add -D unocss unocss-preset-zyyv
 ```
 
 ## Usage
 
 ```ts unocss.config.ts
-import { defineUsefulConfig } from 'unocss-preset-useful'
+import { defineZyyvConfig } from 'unocss-preset-zyyv'
 
-export default defineUsefulConfig()
+export default defineZyyvConfig({
+  // ...
+})
 
 // Custom options
 export default defineUsefulConfig(

@@ -35,7 +35,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/unocss-community/unocss-preset-useful' },
+      { icon: 'github', link: 'https://github.com/unocss-community/unocss-preset-zyyv' },
     ],
   },
 })

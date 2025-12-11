@@ -1,6 +1,9 @@
-# unocss-preset-useful [![npm](https://img.shields.io/npm/v/unocss-preset-useful)](https://npmjs.com/package/unocss-preset-useful)
+# unocss-preset-zyyv [![npm](https://img.shields.io/npm/v/unocss-preset-zyyv)](https://npmjs.com/package/unocss-preset-zyyv)
 
 Integrate and useful preset.
+
+> [!WARNING]
+> The package name has been changed to `unocss-preset-zyyv`.
 
 ## Features
 - 🔥 All-in-One popular presets.
@@ -14,17 +17,17 @@ Integrate and useful preset.
 
 ## Usage
 ```shell
-pnpm i -D unocss-preset-useful unocss
+pnpm i -D unocss-preset-zyyv unocss
 ```
 
 ```ts
 // unocss.config.ts
-import { defineUsefulConfig } from 'unocss-preset-useful'
+import { defineZyyvConfig } from 'unocss-preset-zyyv'
 
-export default defineUsefulConfig()
+export default defineZyyvConfig()
 
 // Custom options
-export default defineUsefulConfig(
+export default defineZyyvConfig(
   {
     // Useful options
   },

@@ -7,7 +7,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "unocss-preset-useful": ["./packages/core/src/index.ts"]
+      "unocss-preset-zyyv": ["./packages/core/src/index.ts"]
     },
     "resolveJsonModule": true,
     "strict": true,

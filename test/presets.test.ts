@@ -1,12 +1,12 @@
 import { createGenerator } from 'unocss'
-import { presetUseful } from 'unocss-preset-useful'
+import { presetZyyv } from 'unocss-preset-zyyv'
 import { describe, expect, it } from 'vitest'
 
-describe('preseUseful presets', () => {
+describe('presetZyyv presets', () => {
   it('mutiple preset', async () => {
     const uno = await createGenerator({
       presets: [
-        presetUseful({
+        presetZyyv({
           typography: true,
         }),
       ],
@@ -20,7 +20,7 @@ describe('preseUseful presets', () => {
     expect(sortedPresets.map(i => i.name)).toMatchInlineSnapshot(`
       [
         "@unocss/preset-icons",
-        "unocss-preset-useful",
+        "unocss-preset-zyyv",
         "@unocss/preset-wind4",
         "@unocss/preset-attributify",
         "@unocss/preset-typography",

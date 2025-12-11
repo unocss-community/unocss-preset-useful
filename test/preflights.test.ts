@@ -1,17 +1,17 @@
-import type { UsefulOptions } from 'unocss-preset-useful'
+import type { ZyyvOptions } from 'unocss-preset-zyyv'
 import { createGenerator } from 'unocss'
-import { presetUseful } from 'unocss-preset-useful'
+import { presetZyyv } from 'unocss-preset-zyyv'
 import { describe, expect, it } from 'vitest'
 
-async function generateUno(options: UsefulOptions = {}) {
+async function generateUno(options: ZyyvOptions = {}) {
   return await createGenerator({
     presets: [
-      presetUseful(options),
+      presetZyyv(options),
     ],
   })
 }
 
-describe('presetUseful preflights', () => {
+describe('presetZyyv preflights', () => {
   it('base', async () => {
     const uno = await generateUno()
     const preflights = uno.config.preflights

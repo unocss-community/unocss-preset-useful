@@ -1,20 +1,20 @@
 import { createGenerator } from '@unocss/core'
-import { defineUsefulConfig } from 'unocss-preset-useful'
+import { defineZyyvConfig } from 'unocss-preset-zyyv'
 import { describe, expect, it } from 'vitest'
 
 describe('config tests', () => {
   it('targets', async () => {
-    const unoA = await createGenerator(defineUsefulConfig())
+    const unoA = await createGenerator(defineZyyvConfig())
     expect(unoA.config.presets.map(p => p.name).join('\n')).toMatchInlineSnapshot(
       `
       "@unocss/preset-icons
-      unocss-preset-useful
+      unocss-preset-zyyv
       @unocss/preset-wind4
       @unocss/preset-attributify"
     `,
     )
 
-    const unoB = await createGenerator(defineUsefulConfig({
+    const unoB = await createGenerator(defineZyyvConfig({
       webFonts: true,
       icons: false,
     }, {
@@ -22,7 +22,7 @@ describe('config tests', () => {
     }))
 
     expect(unoB.config.presets.map(p => p.name).join('\n')).toMatchInlineSnapshot(`
-      "unocss-preset-useful
+      "unocss-preset-zyyv
       @unocss/preset-wind4
       @unocss/preset-web-fonts
       foo
