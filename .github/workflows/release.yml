@@ -18,14 +18,14 @@ jobs:
         with:
           node-version: lts/*
 
+      - name: Install pnpm 🚀
+        uses: pnpm/action-setup@v4
+
       - run: npm i -g npm@latest
 
       - run: pnpm dlx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
-
-      - name: Install pnpm 🚀
-        uses: pnpm/action-setup@v4
 
       - name: Install
         run: pnpm install
